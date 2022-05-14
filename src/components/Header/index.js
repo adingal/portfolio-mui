@@ -63,15 +63,17 @@ const ResponsiveAppBar = () => {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters sx={{ flexDirection: 'row' }}>
-          <Box
-            component="img"
-            sx={{
-              height: 'auto',
-              maxWidth: '100%',
-            }}
-            alt="adingal"
-            src={logo}
-          />
+          <Link to={pages[0].route}>
+            <Box
+              component="img"
+              sx={{
+                height: 'auto',
+                maxWidth: '100%',
+              }}
+              alt="adingal"
+              src={logo}
+            />
+          </Link>
 
           {/* Mobile Menu */}
           <Box
@@ -122,6 +124,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
+          {/* End of Mobile Menu */}
 
           {/* Desktop Menu */}
           <Box
@@ -137,6 +140,7 @@ const ResponsiveAppBar = () => {
               </LinkStyle>
             ))}
           </Box>
+          {/* End of Desktop Menu */}
         </Toolbar>
       </Container>
     </AppBar>
