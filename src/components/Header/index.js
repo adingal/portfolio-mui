@@ -4,16 +4,13 @@ import {
   AppBar,
   Box,
   Toolbar,
-  Button,
   IconButton,
   Menu,
   MenuItem,
   Container,
 } from '@mui/material'
 import DehazeIcon from '@mui/icons-material/Dehaze'
-import CloseIcon from '@mui/icons-material/Close'
 import { styled } from '@mui/material/styles'
-
 import logo from 'assets/images/logo-nobg.png'
 
 const LinkStyle = styled(Link)(
@@ -50,7 +47,6 @@ const pages = [
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null)
-  const [anchorElUser, setAnchorElUser] = useState(null)
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -58,10 +54,6 @@ const ResponsiveAppBar = () => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
-  }
-
-  const handleLinkClick = (route) => {
-    console.log(route)
   }
 
   return (
