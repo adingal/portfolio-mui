@@ -13,15 +13,21 @@ export const theme = createTheme({
       light: '#08c8f8',
       contrastText: '#212529',
     },
+    info: {
+      main: '#0d6efd',
+      light: '#ffffff',
+      contrastText: '#000000',
+    },
   },
   typography: {
     fontFamily: defaultFont,
     h1: {
       fontSize: 40,
+      fontWeight: 500,
       lineHeight: 1.2,
       marginBottom: 40,
       color: '#ffffff',
-      '@media (max-width: 576px)': {
+      '@media (max-width: 600px)': {
         fontSize: 30,
         marginBottom: 30,
       },
@@ -31,7 +37,7 @@ export const theme = createTheme({
       lineHeight: 1.2,
       marginBottom: 40,
       color: '#231f20',
-      '@media (max-width: 576px)': {
+      '@media (max-width: 600px)': {
         fontSize: 25,
         marginBottom: 20,
       },
@@ -41,7 +47,7 @@ export const theme = createTheme({
       lineHeight: 1.2,
       marginBottom: 30,
       color: '#333333',
-      '@media (max-width: 576px)': {
+      '@media (max-width: 600px)': {
         marginBottom: 20,
       },
     },
@@ -55,7 +61,7 @@ export const theme = createTheme({
       fontSize: 14,
       marginBottom: 20,
       color: '#ffffff',
-      '@media (max-width: 576px)': {
+      '@media (max-width: 600px)': {
         fontSize: 12,
         marginBottom: 16,
       },
