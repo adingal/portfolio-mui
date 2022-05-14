@@ -10,9 +10,28 @@ import {
   MenuItem,
   Container,
 } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
+import DehazeIcon from '@mui/icons-material/Dehaze'
+import CloseIcon from '@mui/icons-material/Close'
+import { styled } from '@mui/material/styles'
 
 import logo from 'assets/images/logo-nobg.png'
+
+const LinkStyle = styled(Link)(
+  ({ theme }) => `
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: .3s color ease;
+    padding: 8px;
+    color: ${theme.palette.primary.contrastText};
+    cursor: pointer;
+    &:hover {
+      color: ${theme.palette.secondary.main};
+    }
+`
+)
 
 const pages = [
   {
@@ -36,16 +55,9 @@ const ResponsiveAppBar = () => {
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget)
-  }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
-  }
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
   }
 
   const handleLinkClick = (route) => {
@@ -79,13 +91,13 @@ const ResponsiveAppBar = () => {
           >
             <IconButton
               size="large"
-              aria-label="account of current user"
+              aria-label="mobile menu"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <DehazeIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -106,8 +118,14 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.label} onClick={handleCloseNavMenu}>
-                  <Link to={page.route}>{page.label}</Link>
+                <MenuItem
+                  key={page.label}
+                  onClick={handleCloseNavMenu}
+                  sx={{ minHeight: 32, padding: '0 16px' }}
+                >
+                  <LinkStyle to={page.route} sx={{ padding: 0 }}>
+                    {page.label}
+                  </LinkStyle>
                 </MenuItem>
               ))}
             </Menu>
@@ -122,13 +140,9 @@ const ResponsiveAppBar = () => {
             }}
           >
             {pages.map((page) => (
-              <Link
-                key={page.label}
-                to={page.route}
-                sx={{ my: 2, color: '#333', display: 'block' }}
-              >
+              <LinkStyle key={page.label} to={page.route}>
                 {page.label}
-              </Link>
+              </LinkStyle>
             ))}
           </Box>
         </Toolbar>
