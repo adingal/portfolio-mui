@@ -16,8 +16,8 @@ const root = createRoot(document.getElementById('root'))
 
 root.render(
   <>
-    <CssBaseline />
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <BrowserRouter>
         <Header />
         <Routes>
